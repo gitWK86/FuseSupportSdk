@@ -1,0 +1,3 @@
+include ':rvds_demo'
+include ':library_rvds'
+rootProject.name = "Rvds"
