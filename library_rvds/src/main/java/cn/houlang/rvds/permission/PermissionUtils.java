@@ -31,7 +31,7 @@ public class PermissionUtils {
      *
      * @return
      */
-    public static String[] getWavesSdkDangerousPermissions() {
+    public static String[] getFuseSdkDangerousPermissions() {
         String[] permissions = new String[]{
                 READ_PHONE_STATE,
                 READ_EXTERNAL_STORAGE,
@@ -47,7 +47,7 @@ public class PermissionUtils {
      *
      * @return
      */
-    public static String[] getWavesSdkDangerousPermissions(Activity activity) {
+    public static String[] getFuseSdkDangerousPermissions(Activity activity) {
         //融合默认
         String[] permissions = new String[]{
                 READ_PHONE_STATE,
@@ -74,7 +74,6 @@ public class PermissionUtils {
     private static String[] filterSamePermissions(String[] a, String[] b) {
 
         Set<String> same = new HashSet<>();  //用来存放两个数组中相同的元素
-
         //把数组a中的元素放到Set中，可以去除重复的元素
         //用来存放数组a中的元素
         Set<String> temp = new HashSet<>(Arrays.asList(a));

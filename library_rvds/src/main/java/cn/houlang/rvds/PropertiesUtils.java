@@ -1,4 +1,4 @@
-package cn.houlang.rvds.parms;
+package cn.houlang.rvds;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
@@ -14,7 +14,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 import cn.houlang.rvds.FileUtils;
-import cn.houlang.rvds.jarvis.Trace;
+import cn.houlang.rvds.jarvis.LogRvds;
 
 /**
  * @author #Suyghur.
@@ -42,7 +42,7 @@ public class PropertiesUtils {
                     in = FileUtils.accessFileFromMetaInf(context, fileName);
                     break;
                 default:
-                    Trace.d("get Properties obj , param location is error");
+                    LogRvds.d("get Properties obj , param location is error");
                     break;
             }
             if (in != null) {
@@ -102,7 +102,6 @@ public class PropertiesUtils {
     public static String getValue4Properties(Context context, String fileName, String key) {
         if (propertiesMapCache == null) {
             propertiesMapCache = new HashMap<>();
-            Log.d("kkk_tools", "获取配置文件优化版");
         }
         String value = null;
 
@@ -133,7 +132,6 @@ public class PropertiesUtils {
                 value = propertiesMapCache.get(fileName).getProperty(key);
             } catch (Exception e) {
                 e.printStackTrace();
-                Log.e("kkk_tools", "获取缓存数据异常，key：" + key);
             }
             //Log.d("kkk_tools", "获取缓存数据：" + key + ":" + value);
             return value;

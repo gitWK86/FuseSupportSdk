@@ -47,8 +47,9 @@ public class RsaUtils {
     /**
      * 服务器给的（融合公钥）
      */
-    public static final String RSA_PUBLIC_1024_X509_PEM = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDN25SaukgKQjoZHapGMeK/pnttT4qXVcQWuPDwvEQ81OfXUFg7qeOXmtFAwybdO4zD0tYqkT6WTaSluVdmMywzLJNTpaa8wW8UdWT7X8phPIIoMmJuuetR4YCijH5bKSefLaoWiMMw+ELae+d3Axx3dtJ/wsEDzK5sEW+nROxOfQIDAQAB";
+//    public static final String RSA_PUBLIC_1024_X509_PEM = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDN25SaukgKQjoZHapGMeK/pnttT4qXVcQWuPDwvEQ81OfXUFg7qeOXmtFAwybdO4zD0tYqkT6WTaSluVdmMywzLJNTpaa8wW8UdWT7X8phPIIoMmJuuetR4YCijH5bKSefLaoWiMMw+ELae+d3Axx3dtJ/wsEDzK5sEW+nROxOfQIDAQAB";
 
+    public static final String RSA_PUBLIC_1024_X509_PEM = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCDlV1JzHzuZD8AwezcbyK+6TsVL00TVJsYB5Jy4lI5TrUf+vn0fsi40MxAwKCdUagjjkQKh7Fv2TgBUlJoJuZiUdXwcCJp+XoBDEHMJreRs2L/1RiutCiighb+FYeCMXIwuIOcdkoRwD7eWOL0C1D7RSI+lrk52k/OaUyK+1/lHQIDAQAB";
 
     /**
      * 用公钥对字符串进行分段加密

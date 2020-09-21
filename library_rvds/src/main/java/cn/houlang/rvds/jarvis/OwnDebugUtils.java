@@ -8,7 +8,7 @@ import java.io.File;
 
 import cn.houlang.rvds.FileUtils;
 import cn.houlang.rvds.SDCardUtils;
-import cn.houlang.rvds.parms.PropertiesUtils;
+import cn.houlang.rvds.PropertiesUtils;
 
 /**
  * @author #Suyghur.
@@ -47,7 +47,7 @@ public class OwnDebugUtils {
     public static boolean getOwnDebugFromFuseCfg(Context context) {
 
         String value = PropertiesUtils.getValue4Properties(context, "houlang_game.properties", "HL_OWN_DEBUG");
-        Trace.d("own value : " + value);
+        LogRvds.d("own value : " + value);
         return !TextUtils.isEmpty(value) && Boolean.parseBoolean(value);
     }
 

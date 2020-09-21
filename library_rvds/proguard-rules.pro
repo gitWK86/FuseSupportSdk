@@ -1,6 +1,6 @@
 # Add project specific ProGuard rules here.
 # You can control the set of applied configuration files using the
-# proguardFiles setting in build_lib.gradleadle.
+# proguardFiles setting in build.gradle.
 #
 # For more details, see
 #   http://developer.android.com/guide/developing/tools/proguard.html
@@ -20,13 +20,22 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
+
+# 代码混淆压缩比，在0~7之间，默认为5，一般不做修改
 -optimizationpasses 7
+# 混合时不使用大小写混合，混合后的类名为小写
 -dontusemixedcaseclassnames
+# 指定不去忽略非公共库的类
 -dontskipnonpubliclibraryclasses
 -dontoptimize
+# 这句话能够使我们的项目混淆后产生映射文件
+# 包含有类名->混淆后类名的映射关系
 -verbose
 -ignorewarnings
+# 指定不去忽略非公共库的类成员
 -dontskipnonpubliclibraryclassmembers
+# 指定混淆是采用的算法，后面的参数是一个过滤器
+# 这个过滤器是谷歌推荐的算法，一般不做更改
 -optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
 
 # 保留java与js交互注解
@@ -97,30 +106,26 @@
 -keep class **JNI* {*;}
 
 
--keepattributes InnerClasses,Signature,SourceFile,Exceptions,LineNumberTable,*Annotation*
--keep class  * extends cn.uc.gamesdk.even.SDKEventReceiver {*;}
--keep class  * extends cn.uc.** {*;}
--keep class  * extends cn.gundam.sdk.shell.**{*;}
--keep class  * extends cn.gundam.sdk.shell.even.SDKEventReceiver{*;}
--keep class  * extends com.alipay.** {*;}
--keep class  * extends com.ta.** {*;}
--keep class  * extends com.ut.** {*;}
--keep class  * extends org.json.** {*;}
--keep class  * extends com.baidu.fy.cps.** {*;}
--keep class  * extends com.baidu.bottom.** {*;}
--keep class  * extends com.baidu.mtjstatsdk.** {*;}
+-keep class cn.houlang.rvds.device.**{ public <fields>; public <methods>;}
+-keep class cn.houlang.rvds.download.**{ public <fields>; public <methods>;}
+-keep class cn.houlang.rvds.emulator.**{ public <fields>; public <methods>;}
+-keep class cn.houlang.rvds.encryption.**{ public <fields>; public <methods>;}
+-keep class cn.houlang.rvds.jarvis.**{ public <fields>; public <methods>;}
+-keep class cn.houlang.rvds.multidex.**{ *;}
+-keep class cn.houlang.rvds.nat.**{ public <fields>; public <methods>;}
+-keep class cn.houlang.rvds.permission.**{ public <fields>; public <methods>;}
+-keep class cn.houlang.rvds.thread.**{ public <fields>; public <methods>;}
+-keep class cn.houlang.rvds.ui.**{ public <fields>; public <methods>;}
+-keep class cn.houlang.rvds.AppUtils{ public <fields>; public <methods>;}
+-keep class cn.houlang.rvds.DateUtils{ public <fields>; public <methods>;}
+-keep class cn.houlang.rvds.DensityUtils{ public <fields>; public <methods>;}
+-keep class cn.houlang.rvds.FileUtils{ public <fields>; public <methods>;}
+-keep class cn.houlang.rvds.JsonUtils{ public <fields>; public <methods>;}
+-keep class cn.houlang.rvds.ReflectUtils{ public <fields>; public <methods>;}
+-keep class cn.houlang.rvds.ResUtils{ public <fields>; public <methods>;}
+-keep class cn.houlang.rvds.SDCardUtils{ public <fields>; public <methods>;}
+-keep class cn.houlang.rvds.StrUtils{ public <fields>; public <methods>;}
+-keep class cn.houlang.rvds.UUIDUtils{public <fields>; public <methods>;}
+-keep class cn.houlang.rvds.PropertiesUtils{ public <fields>; public <methods>;}
+-keep class cn.houlang.rvds.ScheduledWorker{ public <fields>; public <methods>;}
 
--keep class android.** { *; }
-
--keep class Decoder.** {*;}
-
--keep class cn.waves.rvds.** {*;}
-
-#-keep class com.tencent.bugly.** {*;}
-#-keep class com.asus.** {*;}
-#-keep class com.bun.** {*;}
-#-keep class com.heytap.** {*;}
-#-keep class com.huawei.** {*;}
-#-keep class com.meizu.** {*;}
-#-keep class com.samsung.** {*;}
-#-keep class com.zui.** {*;}

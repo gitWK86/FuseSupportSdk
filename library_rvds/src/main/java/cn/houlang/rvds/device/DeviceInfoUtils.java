@@ -36,7 +36,7 @@ import java.util.List;
 import java.util.Locale;
 
 import cn.houlang.rvds.emulator.EmulatorFiles;
-import cn.houlang.rvds.jarvis.Trace;
+import cn.houlang.rvds.jarvis.LogRvds;
 
 /**
  * @author #Suyghur.
@@ -661,7 +661,7 @@ public class DeviceInfoUtils {
 
 
 //        boolean b = isEmulator20200326();
-        Trace.d("新的模拟器方法");
+        LogRvds.d("新的模拟器方法");
         boolean b = EmulatorFiles.hasEmulatorFile();
         if (!b) {
             return DeviceInfoUtils.isPcKernel();

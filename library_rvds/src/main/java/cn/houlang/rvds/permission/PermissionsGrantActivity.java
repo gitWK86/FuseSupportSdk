@@ -213,7 +213,7 @@ public class PermissionsGrantActivity extends Activity {
         //不能全透，否会会出现onRequestPermissionsResult不回调
         lp.alpha = 0.3f;
         window.setAttributes(lp);
-        window.setBackgroundDrawable(new ColorDrawable(0));
+        window.setBackgroundDrawable(new ColorDrawable());
 
         View dummyView = new View(this);
         dummyView.setBackgroundResource(Color.TRANSPARENT);

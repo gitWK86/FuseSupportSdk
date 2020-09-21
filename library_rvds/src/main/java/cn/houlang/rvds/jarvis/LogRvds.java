@@ -10,7 +10,7 @@ import java.lang.reflect.Array;
  * @author #Suyghur.
  * Created on 2020/7/29
  */
-public class Trace {
+public class LogRvds {
     public static boolean DEBUG = true;
     public static Handler handler;
 

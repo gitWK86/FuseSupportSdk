@@ -25,7 +25,7 @@ import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-import cn.houlang.rvds.jarvis.Trace;
+import cn.houlang.rvds.jarvis.LogRvds;
 
 /**
  * @author #Suyghur.
@@ -40,7 +40,7 @@ public class FileUtils {
     /**
      * 国内融合用户资料存放路径
      */
-    public final static String INFO_DIR = "/Android/data/rvds/";
+    public final static String INFO_DIR = "/Android/data/houlang/";
 
 
     public final static String PERMISSION_WRITE_EXTERNAL_STORAGE = "android.permission.WRITE_EXTERNAL_STORAGE";
@@ -122,11 +122,11 @@ public class FileUtils {
 
     public static boolean copyFile(File src, File des) {
         if (!src.exists()) {
-            Trace.e("file not exist:" + src.getAbsolutePath());
+            LogRvds.e("file not exist:" + src.getAbsolutePath());
             return false;
         }
         if (!des.getParentFile().isDirectory() && !des.getParentFile().mkdirs()) {
-            Trace.e("mkdir failed:" + des.getParent());
+            LogRvds.e("mkdir failed:" + des.getParent());
             return false;
         }
         BufferedInputStream bis = null;
@@ -144,7 +144,7 @@ public class FileUtils {
             bos.flush();
             return true;
         } catch (Exception e) {
-            Trace.e("exception:" + e.getMessage());
+            LogRvds.e("exception:" + e.getMessage());
             e.printStackTrace();
         } finally {
             if (bis != null) {
@@ -373,7 +373,7 @@ public class FileUtils {
                 FileOutputStream fos = null;
                 try {
                     fos = new FileOutputStream(file, isAppend);
-                    Trace.d("writeStringToFile : " + content);
+                    LogRvds.d("writeStringToFile : " + content);
                     byte[] buffer = content.getBytes();
                     try {
                         fos.write(buffer);
@@ -649,7 +649,7 @@ public class FileUtils {
         FileFilter fileFilter = new FileFilter() {
             @Override
             public boolean accept(File pathname) {
-                Trace.d(pathname.getName());
+                LogRvds.d(pathname.getName());
                 return pathname.getName().startsWith(startWithStr);
             }
         };

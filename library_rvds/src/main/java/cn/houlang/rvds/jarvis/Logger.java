@@ -15,7 +15,7 @@ public class Logger {
     public static boolean DEBUG = true;
     public static Handler handler;
 
-    private static final String TAG = "waves_game";
+    private static final String TAG = "houlang_fuse";
 
     public static void e(String s) {
         if (s != null)
