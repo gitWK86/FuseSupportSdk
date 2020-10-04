@@ -1,4 +1,4 @@
-package cn.houlang.support.ui.dialog;
+package cn.houlang.support.ui.circleprogress;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -13,11 +13,8 @@ import android.view.Window;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import cn.houlang.support.ui.loading.CircleProgressLoading;
-
 
 /**
- *
  * @author #Suyghur,
  * @date 2019/07/17
  */

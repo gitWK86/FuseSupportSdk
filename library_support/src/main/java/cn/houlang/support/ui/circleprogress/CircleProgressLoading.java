@@ -1,4 +1,4 @@
-package cn.houlang.support.ui.loading;
+package cn.houlang.support.ui.circleprogress;
 
 import android.content.Context;
 import android.graphics.Canvas;

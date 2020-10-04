@@ -15,6 +15,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     lintOptions {
         abortOnError false
     }
@@ -26,7 +27,7 @@ android {
 dependencies {
     compileOnly files('libs/android-support-v4.jar')
     compileOnly files('libs/msa_mdid_1.0.13.jar')
-    api files('libs/houlang_volley_1.2.0-1.2.0.jar')
+    //api files('libs/houlang_volley_1.2.0-1.2.0.jar')
 }
 
 apply from: 'buildJar.gradle'

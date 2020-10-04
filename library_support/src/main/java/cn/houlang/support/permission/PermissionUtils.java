@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.Build;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -107,14 +106,8 @@ public class PermissionUtils {
             public void onClick(DialogInterface dialog, int which) {
                 Intent intent = new Intent();
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                if (Build.VERSION.SDK_INT >= 9) {
-                    intent.setAction("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.fromParts("package", activity.getPackageName(), (String) null));
-                } else {
-                    intent.setAction("android.intent.action.VIEW");
-                    intent.setClassName("com.android.settings", "com.android.settings.InstalledAppDetails");
-                    intent.putExtra("com.android.settings.ApplicationPkgName", activity.getPackageName());
-                }
+                intent.setAction("android.settings.APPLICATION_DETAILS_SETTINGS");
+                intent.setData(Uri.fromParts("package", activity.getPackageName(), null));
                 try {
                     activity.startActivity(intent);
                 } catch (Exception e) {

@@ -31,6 +31,8 @@ public class EditTextUtils {
 
     /**
      * 设置手机号格式格式
+     *
+     * @param editText
      */
     public static void setPhoneNumberFormat(EditText editText) {
         editText.setInputType(InputType.TYPE_CLASS_TEXT);
@@ -43,15 +45,16 @@ public class EditTextUtils {
      */
     public static void setIdCardFormat(EditText editText) {
         editText.setInputType(InputType.TYPE_CLASS_TEXT);
-//        String digits = "0123456789xyzXYZ";
-//        editText.setKeyListener(DigitsKeyListener.getInstance(digits));
+
     }
 
-    /*
+    /**
      * 判断字符串中是否有特殊字符
      * 有返回true 没有false
      *
-     * */
+     * @param stb
+     * @return
+     */
     public static boolean specialCharacters(String stb) {
         String regEx = "[ `~!@#$%^&*()+=|{}':;',\\[\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]|\n|\r|\t";
         Pattern p = Pattern.compile(regEx);
@@ -59,11 +62,13 @@ public class EditTextUtils {
         return m.find();
     }
 
-    /*
+    /**
      * 判断身份证是否合法
      * 有返回true 没有false
      *
-     * */
+     * @param stb
+     * @return
+     */
     public static boolean filterIdNumber(String stb) {
         String regEx = "^\\d{15}$|^\\d{17}[0-9Xx]$";
         Pattern p = Pattern.compile(regEx);

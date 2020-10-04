@@ -42,6 +42,12 @@
 -keepattributes *Annotation*
 -keepattributes *JavascriptInterface*
 
+# 保留内部类
+-keepattributes Exceptions,InnerClasses,...
+
+# 保留泛型
+-keepattributes Signature
+
 -keepnames class * implements java.io.Serializable
 -keepclassmembers class * implements java.io.Serializable {
    static final long serialVersionUID;
@@ -73,6 +79,7 @@
 -keep public class * extends android.content.ContentProvider
 -keep public class * extends android.app.backup.BackupAgentHelper
 -keep public class * extends android.preference.Preference
+
 
 -keepclassmembers enum * {
     public static **[] values();
@@ -115,7 +122,7 @@
 -keep class cn.houlang.support.msa.**{ public <fields>; public <methods>;}
 -keep class cn.houlang.support.permission.**{ public <fields>; public <methods>;}
 -keep class cn.houlang.support.thread.**{ public <fields>; public <methods>;}
--keep class cn.houlang.support.ui.**{ public <fields>; public <methods>;}
+-keep class cn.houlang.support.ui.circleprogress.**{ public <fields>; public <methods>;}
 -keep class cn.houlang.support.AppUtils{ public <fields>; public <methods>;}
 -keep class cn.houlang.support.DateUtils{ public <fields>; public <methods>;}
 -keep class cn.houlang.support.DensityUtils{ public <fields>; public <methods>;}
@@ -133,7 +140,9 @@
 -keep class cn.houlang.support.IntegerUtils{ public <fields>; public <methods>;}
 
 
--keep class cn.houlang.support.volley.source.**{ *;}
+-keep class cn.houlang.support.volley.**{ *;}
+-keep class cn.houlang.support.annotation.**{ *;}
+
 
 
 

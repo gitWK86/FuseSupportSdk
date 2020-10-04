@@ -19,5 +19,6 @@ android {
 }
 
 dependencies {
-
+//    api project(':library_support')
+    api files('libs/houlang_support_1.0.1.jar')
 }
